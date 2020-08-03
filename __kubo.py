@@ -91,7 +91,7 @@ def opt_conductivity(data, omega=0, mu=0, kBT=0, smr_fixed_width=0.1, smr_type='
         rank=3
 
     # prefactor for correct units of the result (S/cm)
-    pre_fac = e**2/(100.0 * hbar * data.NKFFT_tot * constants.angstrom)
+    pre_fac = e**2/(100.0 * hbar * data.NKFFT_tot * data.cell_volume * constants.angstrom)
 
     # iterate over ik, simple summation
     for ik in range(data.NKFFT_tot):
